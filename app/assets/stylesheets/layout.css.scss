@@ -141,6 +141,9 @@ footer nav {
   bottom: 0;
   width: 100%;
   display: table;
+  aside {
+    vertical-align: middle;
+  }
   .data {
     //height: 210px;
     //bottom: 0;
@@ -188,8 +191,9 @@ footer nav {
     display: table-cell;
     .scroller {
       .item {
-        float: left;
+        //float: left;
         border: solid 10px white;
+        display: inline-block;
       }
     }
     .to-left, .to-right {
