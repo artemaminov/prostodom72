@@ -195,6 +195,9 @@ footer nav {
         border: solid 10px white;
         display: inline-block;
       }
+      .item:first-child {
+        margin-left: 52px;
+      }
     }
     .to-left, .to-right {
       position: absolute;
