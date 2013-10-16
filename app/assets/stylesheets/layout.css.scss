@@ -1,0 +1,308 @@
+// General--
+html, body {
+  height: 100%;
+}
+
+header, footer {
+  position: relative;
+  padding: 0 40px;
+}
+
+header {
+  height: 16%;
+  min-height: 170px;
+}
+
+.pt {
+  padding-top: 20px;
+}
+.pr {
+  padding-right: 40px;
+}
+.pb {
+  padding-bottom: 20px;
+}
+.pl {
+  padding-left: 40px;
+}
+.mr {
+  margin-right: 40px;
+}
+
+.table-row {
+  display: table-row;
+  width: 100%;
+}
+
+.clearfix {
+  clear: both;
+}
+// --General
+// Templating--
+main {
+  min-height: 660px;
+  min-width: 1200px;
+  height: 73%;
+  position: relative;
+  background: url("project-1-1.jpg") no-repeat 0 0 transparent;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+}
+
+.stripe {
+  height: 2%;
+  background-color: #eadfc3;
+}
+
+footer {
+  height: 7%;
+}
+
+header ul, footer ul{
+  list-style: none;
+  li {
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+header nav {
+  position: absolute;
+  bottom: 32px;
+}
+
+header .logo {
+  position: relative;
+  top: 56px;
+}
+
+footer nav {
+  position: relative;
+  top: 10px;
+}
+// --Templating
+// Sections--
+.project-intro, .projects {
+  position: absolute;
+}
+.article, .gallery {
+  float: right;
+  clear: both;
+}
+
+.article, .gallery {
+  width: 34%;
+}
+
+.article {
+  background: #2f989d;
+  .header {
+    border-bottom: solid 1px #38adb3;
+  }
+}
+
+.gallery {
+  background: #25858a;
+  .header {
+    border-bottom: solid 1px #2f989d;
+  }
+  img {
+    border: solid white 4px;
+    margin: 0 0 10px 0;
+  }
+  img:nth-child(even) {
+    float: right;
+  }
+  img:nth-child(odd) {
+    float: left;
+  }
+}
+
+.project-intro {
+  left: 0;
+  bottom: 230px;
+  width: 60%;
+  .header {
+    min-height: 70px;
+    background: url("big-prosto-logo-roof.png") no-repeat 134px bottom transparent;
+    h1 {
+      padding: 0 0 0.2em 0;
+    }
+  }
+  .text {
+    min-height: 113px;
+    background: url("big-prosto-logo.png") no-repeat 134px -70px, url("big-prosto-logo-stripe.png") repeat-y 134px 0 #ab9d7b;
+  }
+}
+
+.projects {
+  bottom: 0;
+  width: 100%;
+  display: table;
+  .data {
+    //height: 210px;
+    //bottom: 0;
+    //overflow: hidden;
+    min-width: 360px;
+    display: table-cell;
+    .header {
+      background: #a6ce39;
+      border-bottom: solid 1px #b4df3d;
+    }
+    ul {
+      height: 84px;
+      float: left;
+      background: #a6ce39;
+      width: -webkit-calc(100% - 76px);
+      width: -moz-calc(100% - 76px);
+      width: calc(100% - 76px);
+      margin-right: -76px;
+      li {
+        line-height: 28px;
+      }
+    }
+    .stub {
+      width: 36px;
+      height: 84px;
+      background: url("sprites.png") no-repeat -2px -2px transparent;
+      float: right;
+    }
+    .expand-info, .buy {
+      height: 31px;
+      line-height: 31px;
+      clear: both;
+    }
+    .expand-info {
+      background: #85ad18;
+    }
+    .buy {
+      background: #779d0e;
+    }
+  }
+  .list {
+    //height: 210px;
+    //bottom: 0;
+    //right: 0;
+    display: table-cell;
+    .scroller {
+      .item {
+        float: left;
+        border: solid 10px white;
+      }
+    }
+    .to-left, .to-right {
+      position: absolute;
+      top: 80px;
+      height: 52px;
+      width: 52px;
+      display: block;
+      background-image: url("sprites.png");
+    }
+    .to-left {
+      background-position: -46px -20px;
+      margin-left: -15px;
+    }
+    .to-right {
+      background-position: -107px -20px;
+      right: 0;
+    }
+  }
+}
+// --Sections
+// Images--
+i.img {
+  background-image: url("sprites.png");
+  height: 38px;
+  width: 38px;
+  display: block;
+  float: left;
+  margin: 12px 0 0 20px;
+}
+
+.article i {
+  background-position: 160px 327px;
+}
+.gallery i {
+  background-position: 205px 327px;
+}
+.data i {
+  background-position: 250px 327px;
+}
+// --Images
+// Text--
+.text, .photos {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.article h2, .gallery h2, .data h2 {
+  height: 64px;
+  line-height: 64px;
+  padding: 0 70px;
+}
+
+@font-face {
+  font-family: 'Avante';
+  src: font-url('AAvanteTckMedium.eot');
+}
+
+@font-face {
+  font-family: 'Avante';
+  src: font-url('AAvanteTckMedium.woff') format('woff'),
+  font-url('AAvanteTckMedium.svg#AAvanteTckMedium') format('svg');
+}
+
+a, p, li, h1, h2 {
+  font-family: "Avante";
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+header a {
+  font-size: 1em;
+}
+
+p {
+  font-size: 0.9em;
+  line-height: 1.3em;
+}
+
+footer a, .data a {
+  font-size: 0.8em;
+}
+
+header a, footer a {
+  color: black;
+}
+
+.article,
+.gallery,
+.project-intro,
+.data, .data a, {
+  color: white;
+}
+
+h1 {
+  text-shadow: black 1px 2px 4px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.data a {
+  text-decoration: underline;
+}
+
+nav a {
+  text-transform: uppercase;
+}
+// --Text

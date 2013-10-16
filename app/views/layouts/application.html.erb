@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prostodom72Ru</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<header>
+		<%= image_tag "prosto-logo.png", class: "logo" %>
+		<%= render "shared/menu" %>
+	</header>
+
+	<div class="stripe"></div>
+
+	<main>
+
+		<section class="article">
+			<div class="header pr">
+				<i class="img"></i>
+				<h2>Эко-Дом</h2>
+			</div>
+			<div class="text pl pr">
+				<p>Жилье от строительной  компании "Союз"
+					сочетает в себе уникальное местоположение,
+					безупречную экологию, развитую
+					инфраструктуру, профессиональное управление
+					и гарантирует безопасность своих жителей и их
+					гостей...</p>
+			</div>
+		</section>
+
+		<section class="gallery">
+			<div class="header pr">
+				<i class="img"></i>
+				<h2>Дом Мечты</h2>
+			</div>
+			<div class="photos pl pr">
+				<%= image_tag "project-gallery-1-1.jpg" %>
+				<%= image_tag "project-gallery-1-1.jpg" %>
+				<%= image_tag "project-gallery-1-1.jpg" %>
+				<%= image_tag "project-gallery-1-1.jpg" %>
+				<%= image_tag "project-gallery-1-1.jpg" %>
+				<%= image_tag "project-gallery-1-1.jpg" %>
+				<div class="clearfix"></div>
+			</div>
+		</section>
+
+		<section class="project-intro">
+			<div class="header pl">
+				<h1>Рады приветсвовать Вас на сайте компании «Просто Дом»</h1>
+			</div>
+			<div class="text pl pr">
+				<%= yield %>
+			</div>
+		</section>
+
+		<section class="projects">
+			<div class="table-row">
+
+				<aside class="data">
+					<div class="header">
+						<i class="img"></i>
+						<h2 class="name pl">Дом мечты</h2>
+					</div>
+					<ul class="pl">
+						<li>Этажей: <span class="floor">3</span></li>
+						<li>Площадь: <span class="square">420</span> кв. м.</li>
+						<li>Стоимость: <span class="price">7300000</span> руб.</li>
+					</ul>
+					<div class="stub"></div>
+					<div class="expand-info pl"><a href="">Подробнее о проекте</a></div>
+					<div class="buy pl"><a href="">Заказать строительство</a></div>
+				</aside>
+
+				<aside class="list">
+					<a class="to-left" href=""></a>
+					<div class="scroller">
+						<div class="item"><%= image_tag "project-scroll-1.jpg" %></div>
+						<div class="item"><%= image_tag "project-scroll-1.jpg" %></div>
+						<div class="item"><%= image_tag "project-scroll-1.jpg" %></div>
+					</div>
+					<a class="to-right mr" href=""></a>
+				</aside>
+
+			</div>
+		</section>
+
+	</main>
+
+	<div class="stripe"></div>
+
+	<footer>
+		<%= render "shared/menu" %>
+	</footer>
+
+</body>
+</html>
