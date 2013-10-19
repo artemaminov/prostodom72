@@ -13,3 +13,32 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+    $(".scroller").carouFredSel({
+        width: "100%",
+        height: 150,
+        items: {
+            visible: "variable",
+            minimum: 2,
+            start: true,
+            width: 240,
+            height: 150
+        },
+        scroll: {
+            items: 1
+        },
+        auto: false,
+        prev: {
+            button: ".to-left",
+            key: "left"
+        },
+        next: {
+            button: ".to-right",
+            key: "right"
+        },
+        swipe: true
+    }, {
+        debug: true
+    });
+})
