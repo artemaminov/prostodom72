@@ -11,6 +11,7 @@
  *= require_self
  *= require reset
  *= require normalize
+ *= require formtastic
  *= require layout
  *= require_tree .
  */

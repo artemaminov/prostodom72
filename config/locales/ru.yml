@@ -1,0 +1,16 @@
+ru:
+  formtastic:
+    titles:
+    labels:
+    hints:
+    placeholders:
+      client:
+        name: "Имя"
+        phone: "Телефон"
+        email: "E-Mail"
+    actions:
+      client:
+        create: "Отправить"
+      update: "Сохранить изменения"
+      reset: "Очистить форму"
+      cancel: "Отменить"

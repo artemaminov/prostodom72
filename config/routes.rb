@@ -1,5 +1,15 @@
 Prostodom72Ru::Application.routes.draw do
 
+  get "projects(/:id)", to: 'projects#index', as: 'projects'
+
+	get "gallery(/:id)", to: 'gallery#index', as: 'gallery'
+
+	get "articles(/:id)", to: 'articles#index', as: 'articles'
+
+	get "land(/:id)", to: 'land#index', as: 'land'
+
+	resources "contacts", only: [:index, :create], as: 'clients'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

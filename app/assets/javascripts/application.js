@@ -41,4 +41,10 @@ $(document).ready(function() {
     }, {
         debug: true
     });
-})
+
+    $(".to-left").click(function() {
+        $(".scroller").trigger("currentPage", function(p) {
+            console.log(p);
+        });
+    });
+});
