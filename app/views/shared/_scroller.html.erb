@@ -4,15 +4,15 @@
 		<aside class="data">
 			<div class="header">
 				<i class="img"></i>
-				<h2 class="name pl">Дом мечты</h2>
+				<h2 class="name pl"><%= @current_project.name %></h2>
 			</div>
 			<ul class="pl">
-				<li>Этажей: <span class="floor">3</span></li>
-				<li>Площадь: <span class="square">420</span> кв. м.</li>
-				<li>Стоимость: <span class="price">7300000</span> руб.</li>
+				<li>Этажей: <span class="floor"><%= @current_project.floors %></span></li>
+				<li>Площадь: <span class="square"><%= @current_project.square %></span> кв. м.</li>
+				<li>Стоимость: <span class="price"><%= @current_project.price %></span> руб.</li>
 			</ul>
 			<div class="stub"></div>
-			<div class="expand-info pl"><a href="#">Подробнее о проекте</a></div>
+			<div class="expand-info pl"><%= link_to 'Подробнее о проекте', @current_project %></div>
 			<div class="buy pl"><%= link_to "Заказать строительство", clients_path %></div>
 		</aside>
 
@@ -20,15 +20,11 @@
 			<a class="to-left" href="#"></a>
 			<div class="scroller-wrapper">
 				<div class="scroller">
-					<a class="item"><%= image_tag "project-scroll-1.jpg" %></a>
-					<a class="item"><%= image_tag "project-scroll-1.jpg" %></a>
-					<a class="item"><%= image_tag "project-scroll-1.jpg" %></a>
-					<a class="item"><%= image_tag "project-scroll-1.jpg" %></a>
-					<a class="item"><%= image_tag "project-scroll-1.jpg" %></a>
-					<a class="item"><%= image_tag "project-scroll-1.jpg" %></a>
-					<a class="item"><%= image_tag "project-scroll-1.jpg" %></a>
-					<a class="item"><%= image_tag "project-scroll-1.jpg" %></a>
-					<a class="item"><%= image_tag "project-scroll-1.jpg" %></a>
+					<% @all_projects.each do |project| %>
+						<% project.attachments.each do |attachment| %>
+							<a class="item"><%= image_tag attachment.attachment_file_name %></a>
+						<% end %>
+					<% end %>
 				</div>
 			</div>
 			<a class="to-right" href="#"></a>

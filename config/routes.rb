@@ -1,6 +1,7 @@
 Prostodom72Ru::Application.routes.draw do
 
-  get "projects(/:id)", to: 'projects#index', as: 'projects'
+	get "projects", to: 'projects#index', as: 'projects'
+	get "projects/:id", to: 'projects#index', as: 'project'
 
 	get "gallery(/:id)", to: 'gallery#index', as: 'gallery'
 
@@ -68,6 +69,6 @@ Prostodom72Ru::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
 	devise_for :admin_users, ActiveAdmin::Devise.config
-	ActiveAdmin.routes(self)
+  ActiveAdmin.routes(self)
 
 end
