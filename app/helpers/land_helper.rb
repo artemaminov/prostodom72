@@ -1,2 +1,0 @@
-module LandHelper
-end

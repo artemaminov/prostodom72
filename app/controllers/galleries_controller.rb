@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController
+class GalleriesController < ApplicationController
 
   def index
 		@current_project = Project.random

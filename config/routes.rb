@@ -3,11 +3,14 @@ Prostodom72Ru::Application.routes.draw do
 	get "projects", to: 'projects#index', as: 'projects'
 	get "projects/:id", to: 'projects#index', as: 'project'
 
-	get "gallery(/:id)", to: 'gallery#index', as: 'gallery'
+	get "galleries", to: 'galleries#index', as: 'galleries'
+	get "galleries/:id", to: 'galleries#index', as: 'gallery'
 
-	get "articles(/:id)", to: 'articles#index', as: 'articles'
+	get "articles", to: 'articles#index', as: 'articles'
+	get "articles/:id", to: 'articles#index', as: 'article'
 
-	get "land(/:id)", to: 'land#index', as: 'land'
+	get "lands", to: 'lands#index', as: 'lands'
+	get "lands/:id", to: 'lands#index', as: 'land'
 
 	resources "contacts", only: [:index, :create], as: 'clients'
 
