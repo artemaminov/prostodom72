@@ -1,0 +1,39 @@
+<section class="project-intro">
+	<div class="header pl">
+		<h1>Заинтересовались?<br>Сообщите нам!</h1>
+	</div>
+	<div class="text pl pr">
+		<%= semantic_form_for @order do |f| %>
+			<%= f.inputs do %>
+				<span class="order_project_input">
+					<%= f.input :project, label: false, as: :select,
+											collection: options_for_select(Project.mapped, @current_project.id),
+											include_blank: false
+					%>
+				</span>
+				<span class="order_project_input_paragraph">
+					<p>Выберите проект в выпадающем списке, заполните все поля и нажмите кнопку отправить</p>
+				</span>
+				<span class="order_byer_name_input">
+					<i></i><%= f.input :byer_name, label: false %>
+				</span>
+				<span class="order_byer_phone_input">
+					<i></i><%= f.input :byer_phone, label: false, as: :phone %>
+				</span>
+				<span class="order_byer_email_input">
+					<i></i><%= f.input :byer_email, label: false, as: :email %>
+				</span>
+				<span class="order_submit_action">
+					<%= f.action :submit, as: :button %>
+				</span>
+			<% end %>
+		<% end %>
+	</div>
+</section>
+
+<script>$('#order_project').heapbox({
+	'onChange':function(value) {
+		window.location.href = "/projects/"+value+"/orders/new";
+	},
+	effect: {'type':'standard'}
+});</script>

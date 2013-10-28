@@ -1,7 +1,11 @@
 class ProjectsController < ApplicationController
 
   def index
-		@current_project = params[:id] ? Project.find_by_id(params[:id]) : Project.random
+		@current_project = Project.random
+	end
+
+	def show
+		@current_project = Project.find_by_id(params[:id])
 	end
 
 

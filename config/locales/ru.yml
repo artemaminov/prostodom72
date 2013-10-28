@@ -10,7 +10,7 @@ ru:
         email: "E-Mail"
     actions:
       client:
-        create: "Отправить"
+        new: "Отправить"
       update: "Сохранить изменения"
       reset: "Очистить форму"
       cancel: "Отменить"

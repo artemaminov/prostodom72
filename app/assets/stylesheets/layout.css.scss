@@ -76,7 +76,9 @@ main {
   min-height: 73%;
   min-width: 1200px;
   position: relative;
-  background: url("project-1-1.jpg") no-repeat center transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
   -o-background-size: cover !important;
@@ -249,7 +251,7 @@ i.img {
 }
 // --Images
 // Formtastic --
-#new_client {
+#new_order {
   span {
     width: 45%;
     display: block;
@@ -273,7 +275,7 @@ i.img {
       }
     }
   }
-  .client_submit_action {
+  .order_submit_action {
     float: left;
     button {
       background: #2f989d;
@@ -283,21 +285,24 @@ i.img {
       color: white;
     }
   }
-  .client_project_input {
+  .order_project_input {
     float: left;
     margin-right: 20px;
+    overflow: visible;
+    > li {
+      overflow: visible;
+    }
     i {
       background-position: 207px 318px;
       background-color: #a6ce39;
     }
   }
-  .client_project_input_paragraph {
+  .order_project_input_paragraph {
     i {
       background-position: 206px 317px;
     }
-    padding-top: 5px;
   }
-  .client_name_input {
+  .order_byer_name_input {
     i {
       background-position: 104px 317px;
     }
@@ -305,13 +310,13 @@ i.img {
     float: left;
     margin-right: 20px;
   }
-  .client_phone_input {
+  .order_byer_phone_input {
     float: left;
     i {
       background-position: 51px 317px;
     }
   }
-  .client_email_input {
+  .order_byer_email_input {
     clear: left;
     float: left;
     margin-right: 20px;
@@ -322,16 +327,6 @@ i.img {
 }
 // --Formtastic
 // Text--
-.text, .photos {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.article h2, .gallery h2, .data h2 {
-  line-height: 64px;
-  padding: 0 70px;
-}
-
 @font-face {
   font-family: 'Avante';
   src: font-url('AAvanteTckMedium.eot');
@@ -341,6 +336,10 @@ i.img {
   font-family: 'Avante';
   src: font-url('AAvanteTckMedium.woff') format('woff'),
   font-url('AAvanteTckMedium.svg#AAvanteTckMedium') format('svg');
+}
+
+input {
+  outline: none;
 }
 
 a, p, li, h1, h2, .formtastic input, .formtastic button {
@@ -393,5 +392,15 @@ a {
 
 nav a {
   text-transform: uppercase;
+}
+
+.text, .photos {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.article h2, .gallery h2, .data h2 {
+  line-height: 64px;
+  padding: 0 70px;
 }
 // --Text

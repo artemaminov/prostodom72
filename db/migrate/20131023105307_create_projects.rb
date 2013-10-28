@@ -7,7 +7,6 @@ class CreateProjects < ActiveRecord::Migration
       t.float :square
       t.integer :floors
       t.integer :price
-      t.integer :main_image
       t.boolean :visible
 
       t.timestamps

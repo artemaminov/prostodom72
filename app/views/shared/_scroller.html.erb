@@ -13,7 +13,7 @@
 			</ul>
 			<div class="stub"></div>
 			<div class="expand-info pl"><%= link_to 'Подробнее о проекте', @current_project %></div>
-			<div class="buy pl"><%= link_to "Заказать строительство", clients_path %></div>
+			<div class="buy pl"><%= link_to "Заказать строительство", new_project_order_path(@current_project) %></div>
 		</aside>
 
 		<aside class="list">
@@ -21,9 +21,7 @@
 			<div class="scroller-wrapper">
 				<div class="scroller">
 					<% @all_projects.each do |project| %>
-						<% project.attachments.each do |attachment| %>
-							<a class="item"><%= image_tag attachment.attachment_file_name %></a>
-						<% end %>
+						<%= link_to image_tag(project.attachments.main_image), project, class: 'item' %>
 					<% end %>
 				</div>
 			</div>
