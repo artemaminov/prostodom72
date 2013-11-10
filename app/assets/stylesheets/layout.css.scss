@@ -50,7 +50,16 @@ header {
 header {
   nav {
     position: absolute;
-    bottom: 32px;
+    bottom: 17px;
+    .pointer {
+      background: url("sprites.png") -168px 63px;
+      height: 16px;
+      width: 46px;
+      position: relative;
+      left: 50%;
+      top: 20px;
+      margin-left: -23px;
+    }
   }
   .logo {
     position: relative;
