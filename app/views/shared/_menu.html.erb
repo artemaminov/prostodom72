@@ -1,10 +1,10 @@
 <nav>
 	<ul>
 		<li><%= link_to "Главная", :root %></li>
-		<li><%= link_to "Проекты коттеджей", projects_path %></li>
-		<li><%= link_to "Фотогалерея", galleries_path %></li>
-		<li><%= link_to "Интересно знать", articles_path %></li>
-		<li><%= link_to "Земельные участки", lands_path %></li>
+		<li><%= link_to "Проекты коттеджей", projects_path, class: 'disabled' %></li>
+		<li><%= link_to "Фотогалерея", galleries_path, class: 'disabled' %></li>
+		<li><%= link_to "Интересно знать", articles_path, class: 'hidden' %></li>
+		<li><%= link_to "Земельные участки", lands_path, class: 'disabled' %></li>
 		<li><%= link_to "Заказать строительство", orders_path %></li>
 	</ul>
 </nav>

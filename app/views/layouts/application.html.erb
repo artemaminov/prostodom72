@@ -15,38 +15,17 @@
 
 	<div class="stripe"></div>
 
-	<main style="background-image: url(<%= @current_project.attachments.background %>)">
+	<main style="background-image: url(<%= @current_project.background %>)">
 
-		<section class="article">
-			<div class="header pr">
-				<i class="img"></i>
-				<h2>Эко-Дом</h2>
-			</div>
-			<div class="text pl pr">
-				<p>Жилье от строительной  компании "Союз"
-					сочетает в себе уникальное местоположение,
-					безупречную экологию, развитую
-					инфраструктуру, профессиональное управление
-					и гарантирует безопасность своих жителей и их
-					гостей...</p>
-			</div>
-		</section>
+		<% if flash.any? %>
+			<aside class="flash-notice" style="background-color: <%= flash[:notice] ? '#85AD18' : '#FF4D4D' %>">
+				<p><%= flash[:notice] || flash[:error] %></p>
+			</aside>
+		<% end %>
 
-		<section class="gallery">
-			<div class="header pr">
-				<i class="img"></i>
-				<h2>Дом Мечты</h2>
-			</div>
-			<div class="photos pl pr">
-				<%= image_tag "project-gallery-1-1.jpg" %>
-				<%= image_tag "project-gallery-1-1.jpg" %>
-				<%= image_tag "project-gallery-1-1.jpg" %>
-				<%= image_tag "project-gallery-1-1.jpg" %>
-				<%= image_tag "project-gallery-1-1.jpg" %>
-				<%= image_tag "project-gallery-1-1.jpg" %>
-				<div class="clearfix"></div>
-			</div>
-		</section>
+		<%= render 'shared/article' %>
+
+		<%= render 'shared/gallery' %>
 
 		<%= yield %>
 

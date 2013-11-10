@@ -1,16 +1,56 @@
 ru:
+  "true": "Да"
+  "false": "Нет"
+  "v": "Просмотрен"
+  "w": "В работе"
+  "n": "Новый"
+  order:
+    success: "Ваша заявка отправлена"
+    error: "Пожалуйста исправьте ошибки"
   formtastic:
     titles:
     labels:
     hints:
     placeholders:
-      client:
-        name: "Имя"
-        phone: "Телефон"
-        email: "E-Mail"
+      order:
+        buyer_name: "Имя"
+        buyer_phone: "Телефон"
+        buyer_email: "E-Mail"
     actions:
-      client:
-        new: "Отправить"
+      order:
+        create: "Отправить"
       update: "Сохранить изменения"
       reset: "Очистить форму"
       cancel: "Отменить"
+  activerecord:
+    models:
+      attachment: "Прикрепленные файлы"
+      project: "Проекты"
+      admin_user: "Пользователи"
+      order: "Заказы"
+    attributes:
+      attachment:
+        about: "Описание"
+        position: "Позиция"
+        project: "Проект"
+        attachment: "Прикрепленный файлы"
+      project:
+        name: "Название проекта"
+        intro: "Описание"
+        square: "Площадь"
+        floors: "Этажность"
+        price: "Цена"
+        deadline: "Срок строительства"
+        is_visible: "Отображать на страницах?"
+        attachments_attributes: "Прикрепленные файлы"
+      admin_user:
+        password: "Пароль"
+        password_confirmation: "Подтвердите пароль"
+      order:
+        buyer_name: "Имя"
+        buyer_email: "Email"
+        buyer_phone: "Телефон"
+        status: "Статус"
+        created_at: "Поступила"
+        updated_at: "Изменена"
+        project: "Проект"

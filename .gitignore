@@ -17,3 +17,5 @@
 /.idea
 /!resources
 .DS_Store
+/config/*.yml
+/public/system

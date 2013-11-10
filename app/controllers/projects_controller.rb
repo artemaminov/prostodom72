@@ -5,7 +5,8 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
-		@current_project = Project.find_by_id(params[:id])
+		@current_project = Project.find params[:id]
+		@replace_scroller_link = true
 	end
 
 

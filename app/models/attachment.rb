@@ -1,36 +1,30 @@
 class Attachment < ActiveRecord::Base
 
-	MAX_FILESIZE = 3.megabytes
-
 	belongs_to :attachable, polymorphic: true
 
+	attr_accessible :about, :position, :is_main_image, :is_blueprint, :attachment, :attachment_file_name, :attachable_attributes
+	accepts_nested_attributes_for :attachable
+
+	MAX_FILESIZE = 3.megabytes
 	has_attached_file :attachment,
-										path: ':rails_root/public:url',
-										url: '/system/:attachable/:project_id/:basename.:extension',
-										styles: lambda { |attachment| {
-											thumbs: (attachment.instance.attachable_type.parameterize == 'project' ? '220x127#' : '200x100#')
-										}}
+										styles: lambda { |a| a.instance.set_styles }
 	before_post_process :skip_for_not_images
 	validates_attachment_presence :attachment
-	validates_attachment_size :attachment, :less_than => MAX_FILESIZE
+	validates_attachment_size :attachment, :less_than => 3.megabytes
 
-	attr_accessible :attachment, :attachable
-
-	def self.main_image
-		o = self.find_by_is_main_image true
-		o.attachment.url
+	def project
+		Project.find attachable_id
 	end
 
-	def self.background
-		o = self.find_all_by_is_main_image false
-		o.sample.attachment.url
+	def set_styles
+		{ main_image: '220x127#', thumb: '150x90#', big: '1366x768#' }
 	end
 
 
-	protected
+	private
 
 	def skip_for_not_images
-		%w(image/jpg image/jpeg image/png).include?(asset_content_type)
+		%w(image/jpg image/jpeg image/png).include?(attachment_content_type)
 	end
 
 

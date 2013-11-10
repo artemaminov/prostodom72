@@ -4,10 +4,11 @@ class CreateProjects < ActiveRecord::Migration
       t.primary_key :id
       t.string :name
       t.text :intro
-      t.float :square
+      t.integer :square
       t.integer :floors
       t.integer :price
-      t.boolean :visible
+			t.string :deadline, limit: 80
+      t.boolean :is_visible
 
       t.timestamps
     end

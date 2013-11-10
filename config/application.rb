@@ -68,6 +68,13 @@ module Prostodom72Ru
 		config.assets.initialize_on_precompile = false
 
 		#Paperclip
-		#config.paperclip_defaults = {:storage => :fog, :fog_credentials => {:provider => "Local", :local_root => "#{Rails.root}/public"}, :fog_directory => "", :fog_host => "localhost"}
+		config.paperclip_defaults = {
+			storage: :s3,
+				s3_credentials: "#{Rails.root}/config/s3.yml",
+				s3_protocol: "http",
+				path: "/images/:attachable_type/:project_id/:style/:filename",
+				url: ":s3_domain_url",
+				s3_domain_url: "s3-ap-southeast-1.amazonaws.com"
+		}
   end
 end

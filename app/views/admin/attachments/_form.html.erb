@@ -1,0 +1,13 @@
+<%= semantic_form_for [:admin, @attachment] do |f| %>
+	<%= f.inputs do %>
+		<%= f.input :about %>
+		<%= f.input :position %>
+		<%= f.input :is_main_image, as: :boolean %>
+		<%= f.input :is_blueprint, as: :boolean %>
+	<% end %>
+	<%= f.inputs do %>
+		<%= image_tag @attachment.attachment.url :thumb %>
+	<% end %>
+
+<%= f.actions %>
+<% end %>

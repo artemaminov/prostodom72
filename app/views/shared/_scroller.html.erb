@@ -2,17 +2,27 @@
 	<div class="table-row">
 
 		<aside class="data">
-			<div class="header">
-				<i class="img"></i>
-				<h2 class="name pl"><%= @current_project.name %></h2>
+			<div class="additional">
+				<div class="header">
+					<i class="img"></i>
+					<h2 class="name pl"><%= @current_project.name %></h2>
+				</div>
+				<ul class="pl">
+					<li>Этажей: <span class="floor"><%= @current_project.floors %></span></li>
+					<li>Площадь: <span class="square"><%= @current_project.square %></span> кв. м.</li>
+					<li>Стоимость: <span class="price"><%= @current_project.price %></span> руб.</li>
+					<li>Срок строительства: <span class="price"><%= @current_project.deadline %></span></li>
+				</ul>
+				<div class="stub"></div>
 			</div>
-			<ul class="pl">
-				<li>Этажей: <span class="floor"><%= @current_project.floors %></span></li>
-				<li>Площадь: <span class="square"><%= @current_project.square %></span> кв. м.</li>
-				<li>Стоимость: <span class="price"><%= @current_project.price %></span> руб.</li>
-			</ul>
-			<div class="stub"></div>
-			<div class="expand-info pl"><%= link_to 'Подробнее о проекте', @current_project %></div>
+			<div class="expand-info pl">
+				<% if @replace_scroller_link %>
+					<%= link_to 'Скрыть дополнительную информацию', '#', class: 'replace_scroller_link' %>
+					<%= link_to 'Показать дополнительную информацию', '#', class: 'replace_scroller_link', style: 'display: none' %>
+				<% else %>
+					<%= link_to('Подробнее о проекте', @current_project) %>
+				<% end %>
+			</div>
 			<div class="buy pl"><%= link_to "Заказать строительство", new_project_order_path(@current_project) %></div>
 		</aside>
 
@@ -21,7 +31,7 @@
 			<div class="scroller-wrapper">
 				<div class="scroller">
 					<% @all_projects.each do |project| %>
-						<%= link_to image_tag(project.attachments.main_image), project, class: 'item' %>
+						<%= link_to image_tag(project.main_image), project, class: 'item' %>
 					<% end %>
 				</div>
 			</div>
@@ -30,3 +40,7 @@
 
 	</div>
 </section>
+
+<script type="text/javascript">
+	$('.replace_scroller_link').click(hideAdditionalInfo);
+</script>

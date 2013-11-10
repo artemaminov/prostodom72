@@ -1,0 +1,11 @@
+<% unless @article.nil? %>
+	<section class="article">
+		<div class="header pr">
+			<i class="img"></i>
+			<h2><%= @article.name %></h2>
+		</div>
+		<div class="text pl pr">
+			<p><%= @article.announce %> <a class="continue-to-read" href="<%= article_path @article.id %>">Читать&nbsp;далее.</a></p>
+		</div>
+	</section>
+<% end %>

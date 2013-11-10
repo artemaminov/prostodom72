@@ -42,9 +42,16 @@ $(document).ready(function() {
         debug: true
     });
 
-    $(".to-left").click(function() {
-        $(".scroller").trigger("currentPage", function(p) {
-            console.log(p);
-        });
+    $('a.disabled').click(function(o) {
+        return false;
     });
 });
+
+function hideAdditionalInfo() {
+    $('.replace_scroller_link').toggle();
+    $('section.article').toggle();
+    $('section.gallery').toggle();
+    $('.projects .list').toggle();
+    $('.projects .data .additional').toggle();
+    $(".scroller").trigger("updateSizes");
+}

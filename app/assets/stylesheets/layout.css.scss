@@ -37,6 +37,14 @@ header {
 .clearfix {
   clear: both;
 }
+
+a.disabled {
+  color: grey;
+  cursor: default;
+}
+.hidden {
+  display: none;
+}
 // --General
 // Templating--
 header {
@@ -72,8 +80,20 @@ header ul, footer ul{
   background-color: #eadfc3;
 }
 
+.flash-notice {
+  position: absolute;
+  width: 60%;
+  max-width: 900px;
+  height: 65px;
+  p {
+    line-height: 65px;
+    padding: 0 40px;
+  }
+}
+
 main {
-  min-height: 73%;
+  height: 73%;
+  min-height: 705px;
   min-width: 1200px;
   position: relative;
   background-repeat: no-repeat;
@@ -121,8 +141,8 @@ main {
 
 .project-intro {
   float: left;
-  position: relative;
-  bottom: 230px;
+  position: absolute;
+  bottom: 260px;
   width: 60%;
   max-width: 900px;
   clear: both;
@@ -136,6 +156,22 @@ main {
   .text {
     min-height: 113px;
     background: url("big-prosto-logo.png") no-repeat 134px -70px, url("big-prosto-logo-stripe.png") repeat-y 134px 0 #ab9d7b;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #C0B08B;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #AB9D7B;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #85795D;
   }
 }
 
@@ -156,7 +192,7 @@ main {
       white-space: nowrap;
     }
     ul {
-      height: 84px;
+      height: 114px;
       float: left;
       background: #a6ce39;
       width: -webkit-calc(100% - 76px);
@@ -169,7 +205,7 @@ main {
     }
     .stub {
       width: 36px;
-      height: 84px;
+      height: 114px;
       background: url("sprites.png") no-repeat 0 0 transparent;
       float: right;
     }
@@ -193,7 +229,7 @@ main {
       display: block;
       float: left;
       position: absolute;
-      top: 32px;
+      top: 47px;
       right: 112px;
       bottom: 32px;
       left: 57px;
@@ -216,13 +252,13 @@ main {
       background-image: url("sprites.png");
     }
     .to-left {
-      background-position: -44px -18px;
+      background-position: -44px 81px;
       margin-left: -15px;
       //margin-right: 20px;
       float: left;
     }
     .to-right {
-      background-position: -104px -18px;
+      background-position: -104px 81px;
       //margin-left: 20px;
       margin-right: 40px;
       float: right;
@@ -241,16 +277,21 @@ i.img {
 }
 
 .article i {
-  background-position: 253px 313px;
+  background-position: -318px 76px;
 }
 .gallery i {
-  background-position: 297px 313px;
+  background-position: -272px 76px;
 }
 .data i {
-  background-position: 345px 313px;
+  background-position: -227px 76px;
 }
 // --Images
 // Formtastic --
+.formtastic .inline-errors {
+  margin: 0;
+  float: right;
+}
+
 #new_order {
   span {
     width: 45%;
@@ -293,35 +334,33 @@ i.img {
       overflow: visible;
     }
     i {
-      background-position: 207px 318px;
+      background-position: -364px 80px;
       background-color: #a6ce39;
     }
   }
-  .order_project_input_paragraph {
+  .order_buyer_name_input {
     i {
-      background-position: 206px 317px;
-    }
-  }
-  .order_byer_name_input {
-    i {
-      background-position: 104px 317px;
+      background-position: -467px 80px;
     }
     clear: left;
     float: left;
     margin-right: 20px;
   }
-  .order_byer_phone_input {
+  .order_buyer_phone_input {
     float: left;
     i {
-      background-position: 51px 317px;
+      background-position: -519px 80px;
     }
   }
-  .order_byer_email_input {
+  .order_buyer_email_input {
     clear: left;
     float: left;
     margin-right: 20px;
     i {
-      background-position: 156px 317px;
+      background-position: -414px 80px;
+    }
+    li {
+      margin-bottom: 0;
     }
   }
 }
@@ -371,10 +410,16 @@ header a, footer a {
   color: black;
 }
 
+.continue-to-read {
+  text-decoration: underline;
+}
+
+.flash-notice p,
 .article,
 .gallery,
 .project-intro,
-.data, .data a, {
+.data, .data a,
+.continue-to-read {
   color: white;
 }
 

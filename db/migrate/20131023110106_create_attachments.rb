@@ -4,7 +4,8 @@ class CreateAttachments < ActiveRecord::Migration
       t.primary_key :id
       t.string :about
       t.integer :position
-			t.boolean :is_main_image
+			t.boolean :is_main_image, default: false
+			t.boolean :is_blueprint, default: false
 			t.integer :attachable_id
 			t.string :attachable_type
 

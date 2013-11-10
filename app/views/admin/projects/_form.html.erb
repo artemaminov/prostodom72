@@ -1,0 +1,28 @@
+<%= semantic_form_for [:admin, @project], html: { multipart: true } do |f| %>
+	<%= f.inputs do %>
+		<%= f.input :is_visible, as: :boolean %>
+	<% end %>
+	<%= f.inputs do %>
+		<%= f.input :name %>
+		<%= f.input :intro %>
+	<% end %>
+	<%= f.inputs do %>
+		<%= f.input :square %>
+		<%= f.input :floors %>
+		<%= f.input :price %>
+		<%= f.input :deadline %>
+	<% end %>
+	<%= f.inputs do %>
+		<%= f.input :attachments, as: :file, input_html: { multiple: true, name: 'project[attachments_attributes][][attachment]' } %>
+		<p>Одно из изображений должно быть главным</p>
+		<% @project.attachments.each do |a| %>
+			<div class="image-container-<%= a.id %>">
+				<%= link_to image_tag(a.attachment.url :thumb), edit_admin_attachment_path(a.id), class: (a.is_main_image ? 'main_image' : 'not_main_image') %>
+				<%= link_to 'Delete image', delete_attachment_admin_attachment_path(a.id), class: 'button', remote: true, method: :delete %>
+				</div>
+		<% end %>
+
+	<% end %>
+
+<%= f.actions %>
+<% end %>
