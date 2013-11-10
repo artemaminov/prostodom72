@@ -25,6 +25,8 @@ $(document).ready(function() {
             width: 240,
             height: 150
         },
+        circular: false,
+        infinite: false,
         scroll: {
             items: 1
         },
