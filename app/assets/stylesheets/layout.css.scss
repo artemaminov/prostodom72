@@ -38,7 +38,7 @@ header {
   clear: both;
 }
 
-a.disabled {
+.disabled {
   color: grey;
   cursor: default;
 }
@@ -447,5 +447,12 @@ nav a {
 .article h2, .gallery h2, .data h2 {
   line-height: 64px;
   padding: 0 70px;
+}
+
+.offer {
+  font-size: 0.6em;
+  clear: both;
+  position: relative;
+  top: 45px;
 }
 // --Text
