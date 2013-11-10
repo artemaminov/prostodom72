@@ -10,15 +10,15 @@ class Project < ActiveRecord::Base
 	validates_length_of :name, :deadline, maximum: 60
 
 	def self.all
-		self.find_all_by_is_visible true
+		Project.find_all_by_is_visible true
 	end
 
 	def self.random
-		self.all.sample
+		Project.all.sample
 	end
 
 	def self.mapped
-		self.all.map { |project| [project.name, project.id] }
+		Project.all.map { |project| [project.name, project.id] }
 	end
 
 	def background
