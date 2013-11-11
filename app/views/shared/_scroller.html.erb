@@ -31,7 +31,10 @@
 			<div class="scroller-wrapper">
 				<div class="scroller">
 					<% @all_projects.each do |project| %>
-						<%= link_to image_tag(project.main_image), project, class: 'item' %>
+						<div class="item">
+							<%= link_to image_tag(project.main_image), project, class: 'image' %>
+							<a class="title" href=""><%= project.name %></a>
+						</div>
 					<% end %>
 				</div>
 			</div>

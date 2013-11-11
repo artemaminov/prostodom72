@@ -23,10 +23,10 @@ $(document).ready(function() {
             minimum: 2,
             start: true,
             width: 240,
-            height: 150
+            height: 147
         },
-        circular: false,
-        infinite: false,
+//        circular: false,
+//        infinite: false,
         scroll: {
             items: 1
         },
