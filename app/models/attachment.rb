@@ -12,10 +12,6 @@ class Attachment < ActiveRecord::Base
 	validates_attachment_presence :attachment
 	validates_attachment_size :attachment, :less_than => 3.megabytes
 
-	def project
-		Project.find attachable_id
-	end
-
 	def set_styles
 		{ main_image: '220x127#', thumb: '150x90#', big: '1366x768#' }
 	end

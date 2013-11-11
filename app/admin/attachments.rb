@@ -4,7 +4,7 @@ ActiveAdmin.register Attachment do
 
 	index do
 		column :project, sortable: :attachable_id do |att|
-			att.project.name
+			att.attachable.name
 		end
 		column :about, sortable: false
 		column :position

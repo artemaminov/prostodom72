@@ -7,7 +7,7 @@
 	<%= f.inputs :status %>
 	<%= f.inputs do %>
 		<%= @order.project.name %>
-		<%= image_tag @order.project.attachments.main_image %>
+		<%= image_tag @order.project.main_image %>
 	<% end %>
 
 <%= f.actions %>
