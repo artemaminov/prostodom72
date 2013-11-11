@@ -22,7 +22,7 @@ $(document).ready(function() {
             visible: "variable",
             minimum: 2,
             start: true,
-            width: 240,
+            width: 250,
             height: 147
         },
 //        circular: false,
