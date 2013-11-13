@@ -8,5 +8,9 @@ module ApplicationHelper
 		content_tag :li, @content
 	end
 
+	def is_project_page?
+		params[:controller] == 'projects' && params[:action] == 'show'
+	end
+
 
 end

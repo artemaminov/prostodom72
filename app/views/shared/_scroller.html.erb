@@ -5,7 +5,7 @@
 			<div class="additional">
 				<div class="header">
 					<i class="img"></i>
-					<h2 class="name pl"><%= @current_project.name %></h2>
+					<h2 class="name pl"><%= is_project_page? ? 'Информация' : @current_project.name %></h2>
 				</div>
 				<ul class="pl">
 					<li>Этажей: <span class="floor"><%= @current_project.floors %></span></li>

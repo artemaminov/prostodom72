@@ -53,6 +53,7 @@ function hideAdditionalInfo() {
     $('.replace_scroller_link').toggle();
     $('section.article').toggle();
     $('section.gallery').toggle();
+    $('section.project-intro').toggle();
     $('.projects .list').toggle();
     $('.projects .data .additional').toggle();
     $(".scroller").trigger("updateSizes");
