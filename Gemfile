@@ -26,6 +26,7 @@ end
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'fancybox2-rails'
 
 gem 'paperclip'
 gem 'aws-sdk'

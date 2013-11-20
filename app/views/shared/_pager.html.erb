@@ -1,0 +1,18 @@
+<% current_page_num = 0 %>
+<% @gallery.each_with_index do |a, i| %>
+	<% if i.modulo(@items_per_page) == 0 %>
+		<% current_page_num = current_page_num + 1 %>
+		<div class="page<%= " hidden" if current_page_num > 1 %>" data="<%= current_page_num %>">
+	<% end %>
+	<%= link_to image_tag(a.attachment.url(:thumb)), a.attachment.url(:original), class: 'fancybox', rel: 'gallery', title: a.about %>
+	<% if (i.modulo(@items_per_page) == @items_per_page - 1) || ((@gallery.size - 1) == i) %>
+		</div>
+	<% end %>
+<% end %>
+<% if current_page_num > 1 %>
+	<div class="pager">
+		<% current_page_num.times do |i| %>
+			<a data="<%= i + 1 %>" href="#"><%= i + 1 %></a>
+		<% end %>
+	</div>
+<% end %>

@@ -2,16 +2,26 @@
 	<section class="gallery">
 		<div class="header pr">
 			<i class="img"></i>
-			<h2>Дом Мечты</h2>
+			<h2>Фасады и планы</h2>
 		</div>
 		<div class="photos pl pr">
-			<%= image_tag "project-gallery-1-1.jpg" %>
-			<%= image_tag "project-gallery-1-1.jpg" %>
-			<%= image_tag "project-gallery-1-1.jpg" %>
-			<%= image_tag "project-gallery-1-1.jpg" %>
-			<%= image_tag "project-gallery-1-1.jpg" %>
-			<%= image_tag "project-gallery-1-1.jpg" %>
+			<%= render "shared/pager" %>
 			<div class="clearfix"></div>
 		</div>
 	</section>
 <% end %>
+<section class="horizontal-carousel hidden">
+	<div class="main-images">
+		<div class="wrapper">
+			<% unless @gallery.nil? %>
+				<% @gallery.each do |a| %>
+					<div class="slide">
+					<div class="img" style="background-image: url(<%= (a.attachment.url :original).html_safe %>)"></div>
+					</div>
+			<% end %>
+		<% end %>
+		</div>
+	</div>
+	<div class="thumbs">
+	</div>
+</section>

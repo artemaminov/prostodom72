@@ -12,10 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require fancybox
 //= require_tree .
 
 $(document).ready(function() {
-    $(".scroller").carouFredSel({
+    $('.scroller').carouFredSel({
         width: "100%",
         height: 150,
         items: {
@@ -40,8 +41,20 @@ $(document).ready(function() {
             key: "right"
         },
         swipe: true
-    }, {
-        debug: true
+    });
+
+    $('.fancybox').fancybox({
+        prevEffect: 'none',
+        nextEffect: 'none',
+        helpers		: {
+            title: { type : 'inside' }
+        }
+    });
+
+    $('.gallery .pager a').click(function() {
+        var currentPage = ($(this).attr('data'));
+        $('.gallery .page').hide();
+        $('[data*='+currentPage+']').show();
     });
 
     $('a.disabled').click(function(o) {
@@ -56,5 +69,26 @@ function hideAdditionalInfo() {
     $('section.project-intro').toggle();
     $('.projects .list').toggle();
     $('.projects .data .additional').toggle();
-    $(".scroller").trigger("updateSizes");
+    $('.horizontal-carousel').toggle();
+    $('.horizontal-carousel .wrapper').carouFredSel({
+        responsive: true,
+        scroll: {
+            fx: "crossfade",
+            duration: 1000
+        },
+        items: {
+            visible: 1,
+            width: 1200,
+            height: 903
+        },
+        pagination: {
+            container: '.thumbs',
+            anchorBuilder: function(nr) {
+                var src = $('.img', this).css('background-image');
+                src = src.slice(4, -1).replace('/original/', '/thumb/');
+                return '<img src="' + src + '" />';
+            }
+        }
+    });
+    $('.scroller').trigger("updateSizes");
 }

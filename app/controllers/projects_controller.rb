@@ -6,7 +6,9 @@ class ProjectsController < ApplicationController
 
 	def show
 		@current_project = Project.find params[:id]
-		@replace_scroller_link = true
+		@gallery = @current_project.attachments.order('position ASC')
+		@replace_scroller_link = true # Hide show additional project info switch
+		@items_per_page = 6
 	end
 
 

@@ -1,0 +1,17 @@
+<section class="project-intro">
+	<div class="header pl">
+		<h1>Заинтересовались?<br>Сообщите нам!</h1>
+	</div>
+	<div class="text pl pr">
+		<%= semantic_form_for @client do |f| %>
+			<%= f.inputs do %>
+				<span class="client_project_input"><i></i><%= f.input :project, label: false %></span>
+				<span class="client_project_input_paragraph"><p>Выберите проект в выпадающем списке, заполните все поля и нажмите кнопку отправить</p></span>
+				<span class="client_name_input"><i></i><%= f.input :name, label: false %></span>
+				<span class="client_phone_input"><i></i><%= f.input :phone, label: false, as: :phone %></span>
+				<span class="client_email_input"><i></i><%= f.input :email, label: false, as: :email %></span>
+				<span class="client_submit_action"><%= f.action :submit, as: :button %></span>
+			<% end %>
+		<% end %>
+	</div>
+</section>
