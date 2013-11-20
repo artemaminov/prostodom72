@@ -12,5 +12,9 @@ module ApplicationHelper
 		params[:controller] == 'projects' && params[:action] == 'show'
 	end
 
+	def is_projects_page?
+		params[:controller] == 'projects' && params[:action] == 'index'
+	end
+
 
 end
