@@ -31,11 +31,8 @@
 			<a class="to-left" href="#"></a>
 			<div class="scroller-wrapper">
 				<div class="scroller">
-					<% @all_projects.each do |project| %>
-						<div class="item">
-							<%= link_to image_tag(project.main_image), project, class: 'image' %>
-							<a class="title" href=""><%= project.name %></a>
-						</div>
+					<% @all_projects.each do |p| %>
+						<%= render 'shared/project_item', p: p %>
 					<% end %>
 				</div>
 			</div>

@@ -18,13 +18,13 @@
 $(document).ready(function() {
     $('.scroller').carouFredSel({
         width: "100%",
-        height: 150,
+        height: 204,
         items: {
             visible: "variable",
             minimum: 2,
             start: true,
-            width: 250,
-            height: 147
+            width: 246,
+            height: 204
         },
 //        circular: false,
 //        infinite: false,
