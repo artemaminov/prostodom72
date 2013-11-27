@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
 	before_filter do
 		@all_projects = Project.all
+		@article = Article.random
 	end
 
 

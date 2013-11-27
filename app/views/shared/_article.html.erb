@@ -1,11 +1,18 @@
 <% unless @article.nil? %>
-	<section class="article">
+	<section class="article right-sidebar">
 		<div class="header pr">
 			<i class="img"></i>
 			<h2><%= @article.name %></h2>
 		</div>
 		<div class="text pl pr">
-			<p><%= @article.announce %> <a class="continue-to-read" href="<%= article_path @article.id %>">Читать&nbsp;далее.</a></p>
+			<p><%= @article.announce %> <a class="continue-to-read fancytext" href="#inline-<%= @article.id %>">Читать&nbsp;далее.</a></p>
+		</div>
+		<div id="inline-<%= @article.id %>" class="hidden article fancytext">
+			<div class="header">
+				<i class="img"></i>
+				<h2><%= @article.name %></h2>
+			</div>
+			<div class="text pr pl"><%= @article.body.html_safe %></div>
 		</div>
 	</section>
 <% end %>

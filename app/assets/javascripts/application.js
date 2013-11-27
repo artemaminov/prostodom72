@@ -15,7 +15,7 @@
 //= require fancybox
 //= require_tree .
 
-$(document).ready(function() {
+$(window).load(function() {
     $('.scroller').carouFredSel({
         width: "100%",
         height: 204,
@@ -51,6 +51,13 @@ $(document).ready(function() {
         }
     });
 
+    $('.fancytext').fancybox({
+        autoWidth: false,
+        autoHeight: true,
+        width: '50%',
+        maxWidth: 700
+    });
+
     $('.gallery .pager a').click(function() {
         var currentPage = ($(this).attr('data'));
         $('.gallery .page').hide();
@@ -60,14 +67,11 @@ $(document).ready(function() {
     $('a.disabled').click(function(o) {
         return false;
     });
-});
 
-
-// CSS3 Calc substitute --
-$(window).load(function() {
+    // CSS3 Calc substitute --
     $('.projects .additional ul').width($('.projects .data').width() - 76);
-});
 // -- CSS3 Calc substitute
+});
 
 function hideAdditionalInfo() {
     $('.replace_scroller_link').toggle();
