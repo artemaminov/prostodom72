@@ -457,6 +457,11 @@ input {
   outline: none;
 }
 
+ol {
+  list-style: decimal inside;
+  padding-left: 2em;
+}
+
 a, p, li, h1, h2, .formtastic input, .formtastic button {
   font-family: "Avante";
 }
@@ -473,9 +478,10 @@ header a {
   font-size: 1em;
 }
 
-p {
+p, ol {
   font-size: 0.9em;
   line-height: 1.6em;
+  padding-bottom: 0.5em;
 }
 
 footer a, .data a {
