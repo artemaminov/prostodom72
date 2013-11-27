@@ -62,6 +62,13 @@ $(document).ready(function() {
     });
 });
 
+
+// CSS3 Calc substitute --
+$(window).load(function() {
+    $('.projects .additional ul').width($('.projects .data').width() - 76);
+});
+// -- CSS3 Calc substitute
+
 function hideAdditionalInfo() {
     $('.replace_scroller_link').toggle();
     $('section.article').toggle();
