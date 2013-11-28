@@ -1,46 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-  <title>Prostodom72Ru</title>
+  <title>Просто Дом</title>
+  <meta content="простодом, жилье, дом, теплый, уютный, красивый, загородный, коттедж, недвижимость" name="keywords">
+  <meta content="Компания «Просто Дом» - строительство современных, удобных и не дорогих загородных домов и коттеджей" name="description">
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-	<header>
-		<%= link_to image_tag("prosto-logo.png", class: "logo"), :root %>
-		<%= render "shared/menu" %>
-	</header>
+<header>
+  <%= link_to image_tag("prosto-logo.png", class: "logo"), :root %>
+  <%= render "shared/menu" %>
+</header>
 
-	<div class="stripe"></div>
+<div class="stripe"></div>
 
-	<main style="background-image: url(<%= @current_project.background %>)">
+<main style="background-image: url(<%= @current_project.background %>)">
 
-		<% if flash.any? %>
-			<aside class="flash-notice" style="background-color: <%= flash[:notice] ? '#85AD18' : '#FF4D4D' %>">
-				<p><%= flash[:notice] || flash[:error] %></p>
-			</aside>
-		<% end %>
+  <% if flash.any? %>
+    <aside class="flash-notice" style="background-color: <%= flash[:notice] ? '#85AD18' : '#FF4D4D' %>">
+      <p><%= flash[:notice] || flash[:error] %></p>
+    </aside>
+  <% end %>
 
-		<%= render 'shared/article' %>
+  <%= render 'shared/article' %>
 
-		<%= render 'shared/gallery' %>
+  <%= render 'shared/gallery' %>
 
-		<%= yield %>
+  <%= yield %>
 
-		<%= render "shared/scroller" %>
+  <%= render "shared/scroller" %>
 
-		<div class="clearfix"></div>
+  <div class="clearfix"></div>
 
-	</main>
+</main>
 
-	<div class="stripe"></div>
+<div class="stripe"></div>
 
-	<footer>
-		<%= render "shared/menu" %>
-		<p class="offer disabled">Вся представленная на сайте информация ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 (2) ГК РФ.</p>
-	</footer>
+<footer>
+  <%= render "shared/menu" %>
+  <p class="offer disabled">Вся представленная на сайте информация ни при каких условиях не является публичной офертой,
+    определяемой положениями Статьи 437 (2) ГК РФ.</p>
+</footer>
 
 </body>
 </html>
