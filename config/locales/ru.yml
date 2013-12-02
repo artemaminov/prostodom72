@@ -55,7 +55,7 @@ ru:
         updated_at: "Изменена"
         project: "Проект"
   notifications:
-    byuer:
+    buyer:
       subject: "Уведомление о получении Вашего заказа"
     seller:
       subject: "Новый заказ"
