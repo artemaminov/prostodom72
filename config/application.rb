@@ -68,18 +68,18 @@ module Prostodom72Ru
 		config.assets.initialize_on_precompile = false
 
 		#Paperclip
-		#config.paperclip_defaults = {
-		#	storage: :s3,
-		#	s3_credentials: {
-		#			bucket: ENV['S3_BUCKET_NAME'],
-		#			access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-		#			secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-		#	},
-		#	s3_protocol: "http",
-		#	path: "/images/:attachable_type/:project_id/:style/:filename",
-		#	url: ":s3_domain_url",
-		#	s3_domain_url: "s3-ap-southeast-1.amazonaws.com"
-		#}
+		config.paperclip_defaults = {
+			storage: :s3,
+			s3_credentials: {
+					bucket: ENV['S3_BUCKET_NAME'],
+					access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+					secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+			},
+			s3_protocol: "http",
+			path: "/images/:attachable_type/:project_id/:style/:filename",
+			url: ":s3_domain_url",
+			s3_domain_url: "s3-ap-southeast-1.amazonaws.com"
+		}
 
     #Mailer
     config.action_mailer.delivery_method = :smtp
