@@ -54,3 +54,8 @@ ru:
         created_at: "Поступила"
         updated_at: "Изменена"
         project: "Проект"
+  notifications:
+    byuer:
+      subject: "Уведомление о получении Вашего заказа"
+    seller:
+      subject: "Новый заказ"
