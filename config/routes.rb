@@ -1,18 +1,21 @@
 Prostodom72Ru::Application.routes.draw do
 
-	resources :projects, only: [:index, :show] do
-		resources :orders, only: [:new, :create]
-	end
+  resources :projects, only: [:index, :show] do
+    resources :orders, only: [:new, :create]
+    collection do
+      get 'finished(/:id)', id: /\d+/, action: 'finished', as: 'finished'
+    end
+  end
 
-	resources :articles, only: [:index, :show]
+  resources :articles, only: [:index, :show]
 
-	get "galleries", to: 'galleries#index', as: 'galleries'
-	get "galleries/:id", to: 'galleries#index', as: 'gallery'
+  get "galleries", to: 'galleries#index', as: 'galleries'
+  get "galleries/:id", to: 'galleries#index', as: 'gallery'
 
-	get "lands", to: 'lands#index', as: 'lands'
-	get "lands/:id", to: 'lands#index', as: 'land'
+  get "lands", to: 'lands#index', as: 'lands'
+  get "lands/:id", to: 'lands#index', as: 'land'
 
-	resources :orders, only: [:index]
+  resources :orders, only: [:index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -71,7 +74,7 @@ Prostodom72Ru::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-	devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
 end
