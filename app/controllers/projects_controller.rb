@@ -18,6 +18,7 @@ class ProjectsController < ApplicationController
       render :index
     else
       @current_project = Project.find params[:id]
+      @gallery = @current_project.attachments.order('position ASC')
       render :show
     end
   end
