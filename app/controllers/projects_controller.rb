@@ -19,6 +19,10 @@ class ProjectsController < ApplicationController
     else
       @current_project = Project.find params[:id]
       @gallery = @current_project.attachments.order('position ASC')
+
+      # OPTIMIZE
+      @replace_scroller_link = true # Hide show additional project info switch
+      @items_per_page = 6
       render :show
     end
   end

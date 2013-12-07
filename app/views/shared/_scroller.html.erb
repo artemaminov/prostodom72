@@ -27,7 +27,11 @@
             <%= link_to('Подробнее о проекте', @current_project) %>
           <% end %>
         </div>
-        <div class="buy pl"><%= link_to "Заказать строительство", new_project_order_path(@current_project) %></div>
+        <% if action_name == 'finished' %>
+          <div class="buy pl"><%= link_to "Заказать осмотр", new_project_order_path(@current_project) %></div>
+        <% else %>
+          <div class="buy pl"><%= link_to "Заказать строительство", new_project_order_path(@current_project) %></div>
+        <% end %>
       </aside>
 
       <aside class="list">
