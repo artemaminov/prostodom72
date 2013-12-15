@@ -9,6 +9,7 @@
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
+*.dump
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
@@ -18,5 +19,5 @@
 /!resources
 .DS_Store
 /config/*.yml
-/public/system
+/public/images
 .env
