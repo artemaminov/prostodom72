@@ -38,6 +38,7 @@ module Prostodom72Ru
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ru
+    I18n.locale = config.i18n.locale = config.i18n.default_locale
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -65,21 +66,26 @@ module Prostodom72Ru
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-		config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = false
 
-		#Paperclip
-		config.paperclip_defaults = {
-			storage: :s3,
-			s3_credentials: {
-					bucket: ENV['S3_BUCKET_NAME'],
-					access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-					secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-			},
-			s3_protocol: "http",
-			path: "/images/:attachable_type/:project_id/:style/:filename",
-			url: ":s3_domain_url",
-			s3_domain_url: "s3-ap-southeast-1.amazonaws.com"
-		}
+    #Paperclip production
+    config.paperclip_defaults = {
+    	storage: :s3,
+    	s3_credentials: {
+    			bucket: ENV['S3_BUCKET_NAME'],
+    			access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+    			secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+    	},
+    	s3_protocol: "http",
+    	path: "/images/:attachable_type/:project_id/:style/:filename",
+    	url: ":s3_domain_url",
+    	s3_domain_url: "s3-ap-southeast-1.amazonaws.com"
+    }
+    # Paperclip development
+    #config.paperclip_defaults = {
+    #	path: "/images/:attachable_type/:project_id/:style/:filename",
+    #	url: "/images/:attachable_type/:project_id/:style/:filename",
+    #}
 
     #Mailer
     config.action_mailer.delivery_method = :smtp

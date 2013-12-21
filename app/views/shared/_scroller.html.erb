@@ -14,23 +14,23 @@
             <li>Площадь: <span class="square"><%= @current_project.square %></span> кв. м.</li>
             <li>Стоимость: <span class="price"><%= @current_project.price %></span> руб.</li>
             <% unless @current_project.is_finished %>
-              <li>Срок строительства: <span class="price"><%= @current_project.deadline %></span></li>
+            <li>Срок строительства: <span class="price"><%= @current_project.deadline %></span></li>
             <% end %>
           </ul>
           <div class="stub"></div>
         </div>
         <div class="expand-info pl">
           <% if @replace_scroller_link %>
-            <%= link_to 'Скрыть дополнительную информацию', '#', class: 'replace_scroller_link' %>
-            <%= link_to 'Показать дополнительную информацию', '#', class: 'replace_scroller_link', style: 'display: none' %>
+          <%= link_to 'Скрыть дополнительную информацию', '#', class: 'replace_scroller_link' %>
+          <%= link_to 'Показать дополнительную информацию', '#', class: 'replace_scroller_link', style: 'display: none' %>
           <% else %>
-            <%= link_to('Подробнее о проекте', @current_project) %>
+          <%= link_to('Подробнее о проекте', @current_project) %>
           <% end %>
         </div>
         <% if action_name == 'finished' %>
-          <div class="buy pl"><%= link_to "Заказать осмотр", new_project_order_path(@current_project) %></div>
+        <div class="buy pl"><%= link_to "Заказать осмотр", new_order_path(id: @current_project) %></div>
         <% else %>
-          <div class="buy pl"><%= link_to "Заказать строительство", new_project_order_path(@current_project) %></div>
+        <div class="buy pl"><%= link_to "Заказать строительство", new_order_path(id: @current_project) %></div>
         <% end %>
       </aside>
 
@@ -40,7 +40,7 @@
         <div class="scroller-wrapper">
           <div class="scroller">
             <% @all_projects.each do |p| %>
-              <%= render 'shared/project_item', p: p %>
+            <%= render 'shared/project_item', p: p %>
             <% end %>
           </div>
         </div>

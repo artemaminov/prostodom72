@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @current_project = Project.find_by_id params[:project_id]
+    @current_project = Project.find_by_id params[:id]
     @order = Order.new
     render :index
   end
@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
     if @order.save
       flash.keep[:notice] = t('order.success')
       new_order_notify(@order)
-      redirect_to action: :new
+      redirect_to action: :new, id: @current_project.id
     else
       flash.now[:error] = t('order.error')
       render :index

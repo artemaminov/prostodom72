@@ -1,5 +1,5 @@
 <div class="project-item">
-  <%= link_to image_tag(p.main_image), p.is_finished ? finished_projects_path(p) : p, class: 'image' %>
+  <%= link_to image_tag(p.main_image), p.is_finished ? finished_path(id: p) : p, class: 'image' %>
   <a class="title" href=""><%= p.name %></a>
   <ul>
     <li>Этажей: <span class="floor"><%= p.floors %></span></li>

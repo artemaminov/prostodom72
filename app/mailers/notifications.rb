@@ -10,6 +10,7 @@ class Notifications < ActionMailer::Base
 
   def seller(order)
     @order = order
+    #mail to: 'artemaminov@gmail.com'
     mail to: 'sale@prostodom72.ru'
   end
 

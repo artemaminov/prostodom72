@@ -1,9 +1,9 @@
-<section class="project-intro">
+<section class="project intro">
 	<div class="header pl">
 		<h1>Заинтересовались? Сообщите&nbsp;нам!</h1>
 	</div>
 	<div class="text pl pr">
-		<%= semantic_form_for [@current_project, @order] do |f| %>
+		<%= semantic_form_for @order do |f| %>
 			<div class="errors">
 
 			</div>
@@ -36,7 +36,7 @@
 
 <script type="text/javascript">$('#order_project_id').heapbox({
 	'onChange':function(value) {
-		window.location.href = "/projects/"+value+"/orders/new";
+		window.location.href = "/orders/new?id=" + value;
 	},
 	effect: {'type':'standard'}
 });</script>

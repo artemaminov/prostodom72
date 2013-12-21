@@ -1,13 +1,10 @@
 Prostodom72Ru::Application.routes.draw do
 
-  resources :projects, only: [:index, :show] do
-    resources :orders, only: [:new, :create]
-    collection do
-      get 'finished(/:id)', id: /\d+/, action: 'finished', as: 'finished'
-    end
-  end
-
+  resources :projects, only: [:index, :show]
+  resources :finished, only: [:index, :show]
   resources :articles, only: [:index, :show]
+
+  resources :orders, only: [:new, :create]
 
   get "galleries", to: 'galleries#index', as: 'galleries'
   get "galleries/:id", to: 'galleries#index', as: 'gallery'

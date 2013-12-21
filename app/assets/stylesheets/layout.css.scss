@@ -34,7 +34,7 @@ header {
   width: 100%;
 }
 
-.clearfix {
+.clear {
   clear: both;
 }
 
@@ -165,13 +165,10 @@ main {
   }
 }
 
-.project-intro {
+.project {
   float: left;
-  position: absolute;
-  bottom: 270px;
   width: 60%;
   max-width: 900px;
-  clear: both;
   .header {
     background: no-repeat 134px bottom #968868;
     border-bottom: 1px solid #C2AE80;
@@ -187,6 +184,10 @@ main {
     overflow: hidden;
   }
 }
+.intro {
+  position: absolute;
+  bottom: 270px;
+}
 
 .project-item {
   background: #FFF;
@@ -194,7 +195,7 @@ main {
   float: left;
   padding: 8px;
   font-size: 0.8em;
-  margin: 0 5px;
+  margin: 5px;
   position: relative;
   width: 220px;
   .title {
@@ -501,7 +502,7 @@ header a, footer a {
 .flash-notice p,
 .article,
 .gallery, .gallery .pager a,
-.project-intro,
+.project,
 .data, .data a,
 .scroller .item .title,
 .continue-to-read {

@@ -18,13 +18,13 @@
 $(window).load(function() {
     $('.scroller').carouFredSel({
         width: "100%",
-        height: 204,
+        height: 209,
         items: {
             visible: "variable",
             minimum: 2,
             start: true,
             width: 246,
-            height: 204
+            height: 209
         },
 //        circular: false,
 //        infinite: false,
@@ -77,7 +77,7 @@ function hideAdditionalInfo() {
     $('.replace_scroller_link').toggle();
     $('section.article').toggle();
     $('section.gallery').toggle();
-    $('section.project-intro').toggle();
+    $('section.project').toggle();
     $('.projects .list').toggle();
     $('.projects .data .additional').toggle();
     $('.horizontal-carousel').toggle();
