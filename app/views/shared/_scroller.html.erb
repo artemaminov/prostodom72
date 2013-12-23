@@ -10,11 +10,11 @@
             <h2 class="name pl"><%= is_project_page? ? 'Информация' : @current_project.name %></h2>
           </div>
           <ul class="pl">
-            <li>Этажей: <span class="floor"><%= @current_project.floors %></span></li>
-            <li>Площадь: <span class="square"><%= @current_project.square %></span> кв. м.</li>
-            <li>Стоимость: <span class="price"><%= @current_project.price %></span> руб.</li>
+            <li>Этажей: <%= @current_project.floors %></li>
+            <li>Площадь: <%= @current_project.square %> кв. м.</li>
+            <li>Стоимость: <%= @current_project.price %> руб.</li>
             <% unless @current_project.is_finished %>
-            <li>Срок строительства: <span class="price"><%= @current_project.deadline %></span></li>
+            <li>Срок строительства: <%= @current_project.deadline %></li>
             <% end %>
           </ul>
           <div class="stub"></div>
