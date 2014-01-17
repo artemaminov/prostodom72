@@ -12,6 +12,18 @@ header, footer {
 header {
   height: 16%;
   min-height: 170px;
+  .phone {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    color: #A6CE39;
+    width: 310px;
+    line-height: 62px;
+    i {
+      background-position: -578px 73px;
+      padding-right: 9px;
+    }
+  }
 }
 
 .pt {
@@ -537,19 +549,6 @@ nav a {
 .data h2 {
   line-height: 64px;
   padding: 0 0 0 70px;
-}
-
-.phone {
-  position: absolute;
-  right: 40px;
-  top: 20px;
-  color: #A6CE39;
-  width: 310px;
-  line-height: 62px;
-  i {
-    background-position: -578px 73px;
-    padding-right: 9px;
-  }
 }
 
 .offer {
