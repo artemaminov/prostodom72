@@ -39,8 +39,8 @@
 
         <div class="scroller-wrapper">
           <div class="scroller">
-            <% @all_projects.each do |p| %>
-            <%= render 'shared/project_item', p: p %>
+            <% @all_projects.each do |project| %>
+            <%= render 'shared/project_item', project: project %>
             <% end %>
           </div>
         </div>

@@ -1,15 +1,15 @@
 <div class="project-item">
-  <% if p.sold %>
+  <% if project.sold %>
     <div class="sold"></div>
   <% end %>
-  <%= link_to image_tag(p.main_image), p.is_finished ? finished_path(id: p) : p, class: 'image' %>
-  <a class="title" href=""><%= p.name %></a>
+  <%= link_to image_tag(project.main_image), project.is_finished ? finished_path(id: project) : project, class: 'image' %>
+  <a class="title" href=""><%= project.name %></a>
   <ul>
-    <li>Этажей: <%= p.floors %></li>
-    <li>Площадь: <%= p.square %> кв. м.</li>
-    <li>Стоимость: <%= p.price %> руб.</li>
-    <% unless p.is_finished %>
-      <li>Срок строительства: <%= p.deadline %></li>
+    <li>Этажей: <%= project.floors %></li>
+    <li>Площадь: <%= project.square %> кв. м.</li>
+    <li>Стоимость: <%= project.price %> руб.</li>
+    <% unless project.is_finished %>
+      <li>Срок строительства: <%= project.deadline %></li>
     <% end %>
   </ul>
 </div>
