@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131024052645) do
+ActiveRecord::Schema.define(:version => 20140209105245) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -47,36 +47,28 @@ ActiveRecord::Schema.define(:version => 20131024052645) do
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "articles", :force => true do |t|
-    t.string   "name"
-    t.text     "announce"
+    t.string   "name",       :limit => 60
+    t.string   "announce"
     t.text     "body"
     t.integer  "main_image"
     t.boolean  "visible"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   create_table "attachments", :force => true do |t|
     t.string   "about"
     t.integer  "position"
+    t.boolean  "is_main_image",           :default => false
+    t.boolean  "is_blueprint",            :default => false
     t.integer  "attachable_id"
     t.string   "attachable_type"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
     t.string   "attachment_file_name"
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
-  end
-
-  create_table "clients", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.integer  "project"
-    t.boolean  "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "galleries", :force => true do |t|
@@ -88,16 +80,28 @@ ActiveRecord::Schema.define(:version => 20131024052645) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "orders", :force => true do |t|
+    t.string   "buyer_name"
+    t.string   "buyer_email"
+    t.string   "buyer_phone"
+    t.integer  "project_id"
+    t.string   "status",      :limit => 1
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.text     "intro"
-    t.float    "square"
+    t.integer  "square"
     t.integer  "floors"
     t.integer  "price"
-    t.integer  "main_image_id"
-    t.boolean  "visible"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.string   "deadline",    :limit => 80
+    t.boolean  "is_visible"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+    t.boolean  "is_finished",               :default => false, :null => false
+    t.boolean  "sold",                      :default => false
   end
 
 end

@@ -43,6 +43,7 @@ ru:
         deadline: "Срок строительства"
         is_visible: "Отображать на страницах?"
         is_finished: "Готовый дом?"
+        sold: "Продан?"
         attachments_attributes: "Прикрепленные файлы"
       admin_user:
         password: "Пароль"

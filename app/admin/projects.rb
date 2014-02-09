@@ -12,6 +12,9 @@ ActiveAdmin.register Project do
     column :is_finished do |p|
       t p.is_finished.to_s
     end
+    column :sold do |p|
+      t p.sold.to_s
+    end
     actions
   end
 

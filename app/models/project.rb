@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
   has_many :attachments, as: :attachable, :dependent => :destroy
   accepts_nested_attributes_for :attachments, allow_destroy: true
 
-  attr_accessible :floors, :intro, :name, :price, :square, :deadline, :is_visible, :is_finished, :attachments_attributes
+  attr_accessible :floors, :intro, :name, :price, :square, :deadline, :is_visible, :is_finished, :sold, :attachments_attributes
 
   validates_presence_of :floors, :intro, :name, :price, :square, :deadline
   validates_numericality_of :floors, :price, :square
