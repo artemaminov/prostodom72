@@ -289,13 +289,12 @@ main {
     position: relative;
     .scroller-wrapper {
       display: block;
-      float: left;
-      position: absolute;
-      top: 15px;
-      right: 112px;
-      bottom: 0;
-      left: 57px;
+      width: 100%;
     }
+  }
+  .list-nav {
+    display: table-cell;
+    min-width: 52px;
     .to-left, .to-right {
       height: 52px;
       margin-top: 3px;
@@ -311,6 +310,7 @@ main {
     .to-right {
       background-position: -104px 81px;
       margin-right: 40px;
+      margin-left: 15px;
       float: right;
     }
   }
