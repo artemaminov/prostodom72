@@ -59,8 +59,6 @@ ActiveRecord::Schema.define(:version => 20140209105245) do
   create_table "attachments", :force => true do |t|
     t.string   "about"
     t.integer  "position"
-    t.boolean  "is_main_image",           :default => false
-    t.boolean  "is_blueprint",            :default => false
     t.integer  "attachable_id"
     t.string   "attachable_type"
     t.datetime "created_at",                                 :null => false
@@ -69,6 +67,8 @@ ActiveRecord::Schema.define(:version => 20140209105245) do
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
+    t.boolean  "is_main_image",           :default => false
+    t.boolean  "is_blueprint",            :default => false
   end
 
   create_table "galleries", :force => true do |t|
@@ -96,12 +96,12 @@ ActiveRecord::Schema.define(:version => 20140209105245) do
     t.integer  "square"
     t.integer  "floors"
     t.integer  "price"
-    t.string   "deadline",    :limit => 80
     t.boolean  "is_visible"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
-    t.boolean  "is_finished",               :default => false, :null => false
-    t.boolean  "sold",                      :default => false
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.string   "deadline",    :limit => nil
+    t.boolean  "is_finished",                :default => false
+    t.boolean  "sold",                       :default => false
   end
 
 end
