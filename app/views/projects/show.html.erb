@@ -3,6 +3,6 @@
 		<h1><%= @current_project.name %></h1>
 	</div>
 	<div class="text pl pr">
-		<p><%= @current_project.intro %></p>
+		<p><%= @current_project.intro.html_safe %></p>
 	</div>
 </section>
