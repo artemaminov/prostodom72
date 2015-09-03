@@ -10,6 +10,7 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 *.dump
+db-backup
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
@@ -21,3 +22,4 @@
 /config/*.yml
 /public/images
 .env
+/!domains.txt
