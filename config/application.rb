@@ -82,10 +82,10 @@ module Prostodom72Ru
     	s3_domain_url: "s3-ap-southeast-1.amazonaws.com"
     }
     # Paperclip development
-    #config.paperclip_defaults = {
-    #	path: "/images/:attachable_type/:project_id/:style/:filename",
-    #	url: "/images/:attachable_type/:project_id/:style/:filename",
-    #}
+    # config.paperclip_defaults = {
+    # 	path: "/images/:attachable_type/:project_id/:style/:filename",
+    # 	url: "/images/:attachable_type/:project_id/:style/:filename",
+    # }
 
     #Mailer
     config.action_mailer.delivery_method = :smtp
