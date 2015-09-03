@@ -23,7 +23,7 @@ group :assets do
 end
 
 group :development do
-	gem "better_errors"
+	gem "better_errors", '~> 1.1'
 	gem "binding_of_caller"
 end
 
