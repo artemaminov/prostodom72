@@ -81,7 +81,7 @@ function hideAdditionalInfo() {
             anchorBuilder: function (nr) {
                 var src = $('.img', this).css('background-image');
                 src = src.slice(4, -1).replace('/original/', '/thumb/');
-                return '<img src="' + src + '" />';
+                return '<img class="" src=' + src + '>';
             }
         }
     });
